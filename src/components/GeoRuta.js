@@ -77,7 +77,6 @@ function GeoRouting({ destination }) {
                             }),
                             createMarker: function (i, wp) {
                                 if (i === 0) {
-                                    // No crear marcador para el inicio (ya lo creamos manualmente)
                                     return null;
                                 }
                                 

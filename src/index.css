@@ -65,6 +65,10 @@ code {
   align-items: center;
 }
 
+.search {
+  display: flex;
+}
+
 /* Botones principales */
 .nav-button {
   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import MapaBasico from "./components/MapaBasico.js";
-import Geolocalizacion from "./components/Geolocalizacion.js"
+import Geolocalizacion from "./components/Geolocalizacion.js";
 import Marcadores from "./components/Marcadores.js";
 import Ruta from "./components/Ruta.js";
 import GeoRuta from "./components/GeoRuta.js";
+import SearchRoute from "./components/SearchRoute.js"; // NEW IMPORT
 
 export default function App() {
   const [vista, setVista] = useState(null);
@@ -31,17 +32,21 @@ export default function App() {
           <button className="nav-button" onClick={() => setVista("georuta")}>
             Geo + Ruta
           </button>
+          <button className="nav-button" onClick={() => setVista("search")}>
+            Buscador
+          </button>
         </div>
       </div>
 
       {/* Contenedor del mapa */}
       <div className="map-container">
-        {vista === "basico" && <MapaBasico onBack={handleBack}/>}
-        {vista === "geo" && <Geolocalizacion onBack={handleBack}/>}
-        {vista === "marcadores" && <Marcadores onBack={handleBack}/>}
-        {vista === "ruta" && <Ruta onBack={handleBack}/>}
-        {vista === "georuta" && <GeoRuta onBack={handleBack}/>}
-        
+        {vista === "basico" && <MapaBasico onBack={handleBack} />}
+        {vista === "geo" && <Geolocalizacion onBack={handleBack} />}
+        {vista === "marcadores" && <Marcadores onBack={handleBack} />}
+        {vista === "ruta" && <Ruta onBack={handleBack} />}
+        {vista === "georuta" && <GeoRuta onBack={handleBack} />}
+        {vista === "search" && <SearchRoute onBack={handleBack} />}
+
         {!vista && (
           <div className="welcome-message">
             <h2 className="welcome-title">Bienvenido al Demo Interactivo</h2>
